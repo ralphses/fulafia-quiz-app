@@ -1,0 +1,83 @@
+[
+  {
+    "question": "What is the correct form of the verb in the following sentence: 'She _____ to the store yesterday.'?",
+    "optionA": "go",
+    "optionB": "going",
+    "optionC": "went",
+    "optionD": "gone",
+    "correct": "C"
+  },
+  {
+    "question": "Which of the following words is an antonym of 'benevolent'?",
+    "optionA": "Kind",
+    "optionB": "Generous",
+    "optionC": "Malevolent",
+    "optionD": "Charitable",
+    "correct": "C"
+  },
+  {
+    "question": "What is the correct spelling of the word 'accommodation'?",
+    "optionA": "Acomodation",
+    "optionB": "Accomodation",
+    "optionC": "Acommodation",
+    "optionD": "Accommodation",
+    "correct": "D"
+  },
+  {
+    "question": "Which of the following sentences is in the passive voice?",
+    "optionA": "She sings a song.",
+    "optionB": "The book was read by him.",
+    "optionC": "They are playing outside.",
+    "optionD": "I love ice cream.",
+    "correct": "B"
+  },
+  {
+    "question": "Choose the correct article to complete the sentence: 'I saw _____ cat in the garden.'",
+    "optionA": "a",
+    "optionB": "an",
+    "optionC": "the",
+    "optionD": "no article needed",
+    "correct": "C"
+  },
+  {
+    "question": "What is the plural form of 'child'?",
+    "optionA": "Childs",
+    "optionB": "Childs'",
+    "optionC": "Children",
+    "optionD": "Childens",
+    "correct": "C"
+  },
+  {
+    "question": "Which of the following words is a synonym for 'vivid'?",
+    "optionA": "Dull",
+    "optionB": "Bright",
+    "optionC": "Hazy",
+    "optionD": "Faint",
+    "correct": "B"
+  },
+  {
+    "question": "Select the correct tense of the verb in the sentence: 'They will be singing at the concert.'",
+    "optionA": "Past tense",
+    "optionB": "Present tense",
+    "optionC": "Future tense",
+    "optionD": "Past participle",
+    "correct": "C"
+  },
+  {
+    "question": "Which of the following sentences is a question?",
+    "optionA": "The sun is shining.",
+    "optionB": "She won the race.",
+    "optionC": "Have you finished your homework?",
+    "optionD": "He is reading a book.",
+    "correct": "C"
+  },
+  {
+    "question": "What is the opposite of 'generous'?",
+    "optionA": "Kind",
+    "optionB": "Selfish",
+    "optionC": "Charitable",
+    "optionD": "Benevolent",
+    "correct": "B"
+  }
+]
+

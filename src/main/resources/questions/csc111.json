@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What is the binary system used for in computers?",
+    "optionA": "Storing text documents",
+    "optionB": "Performing arithmetic operations",
+    "optionC": "Displaying graphics",
+    "optionD": "Listening to music",
+    "correct": "B"
+  },
+  {
+    "question": "Which programming language is known for its use in artificial intelligence and machine learning?",
+    "optionA": "Java",
+    "optionB": "C++",
+    "optionC": "Python",
+    "optionD": "Ruby",
+    "correct": "C"
+  },
+  {
+    "question": "What is the role of an operating system in a computer?",
+    "optionA": "Running applications",
+    "optionB": "Displaying web pages",
+    "optionC": "Creating spreadsheets",
+    "optionD": "Browsing the internet",
+    "correct": "A"
+  },
+  {
+    "question": "Which data structure is used for organizing data in a LIFO (Last-In-First-Out) manner?",
+    "optionA": "Queue",
+    "optionB": "Heap",
+    "optionC": "Stack",
+    "optionD": "Linked List",
+    "correct": "C"
+  },
+  {
+    "question": "What does CPU stand for in the context of computers?",
+    "optionA": "Central Processing Unit",
+    "optionB": "Computer Programming Utility",
+    "optionC": "Control Panel Update",
+    "optionD": "Cyber Protection Unit",
+    "correct": "A"
+  },
+  {
+    "question": "Which of the following is a high-level programming language?",
+    "optionA": "Assembly",
+    "optionB": "C",
+    "optionC": "Python",
+    "optionD": "Machine Code",
+    "correct": "C"
+  },
+  {
+    "question": "What is the primary function of RAM (Random Access Memory) in a computer?",
+    "optionA": "Permanent storage of data",
+    "optionB": "Long-term data backup",
+    "optionC": "Temporary data storage for active programs",
+    "optionD": "Displaying images on the screen",
+    "correct": "C"
+  },
+  {
+    "question": "In computer science, what does the acronym 'URL' stand for?",
+    "optionA": "Universal Resource Locator",
+    "optionB": "User Response Link",
+    "optionC": "Uniform Reference List",
+    "optionD": "Unified Relational Language",
+    "correct": "A"
+  },
+  {
+    "question": "Which of the following is an example of a high-level programming language?",
+    "optionA": "Binary",
+    "optionB": "Machine Code",
+    "optionC": "C++",
+    "optionD": "Assembly Language",
+    "correct": "C"
+  },
+  {
+    "question": "What is an algorithm?",
+    "optionA": "A computer virus",
+    "optionB": "A step-by-step procedure for solving a problem",
+    "optionC": "A hardware component of a computer",
+    "optionD": "A type of computer programming language",
+    "correct": "B"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "question": "Which of the following sentences is a question?",
+    "optionA": "The sun is shining.",
+    "optionB": "She won the race.",
+    "optionC": "Have you finished your homework?",
+    "optionD": "He is reading a book.",
+    "correct": "C"
+  },
+  {
+    "question": "What is the correct plural form of 'child'?",
+    "optionA": "Childs",
+    "optionB": "Childs'",
+    "optionC": "Children",
+    "optionD": "Childens",
+    "correct": "C"
+  },
+  {
+    "question": "Choose the synonym for 'vivid'",
+    "optionA": "Dull",
+    "optionB": "Bright",
+    "optionC": "Hazy",
+    "optionD": "Faint",
+    "correct": "B"
+  },
+  {
+    "question": "Which sentence is in the past tense?",
+    "optionA": "She sings beautifully.",
+    "optionB": "They will go to the park.",
+    "optionC": "He walked to the store.",
+    "optionD": "We are swimming in the pool.",
+    "correct": "C"
+  },
+  {
+    "question": "What is the correct spelling of the word 'accommodation'?",
+    "optionA": "Acomodation",
+    "optionB": "Accomodation",
+    "optionC": "Acommodation",
+    "optionD": "Accommodation",
+    "correct": "D"
+  },
+  {
+    "question": "What is the plural form of 'mouse'?",
+    "optionA": "Mouses",
+    "optionB": "Mice",
+    "optionC": "Mousies",
+    "optionD": "Mousen",
+    "correct": "B"
+  },
+  {
+    "question": "Which of the following words is an adverb?",
+    "optionA": "Fast",
+    "optionB": "Run",
+    "optionC": "Table",
+    "optionD": "Quickly",
+    "correct": "D"
+  },
+  {
+    "question": "Select the correct tense of the verb in the sentence: 'They will be singing at the concert.'",
+    "optionA": "Past tense",
+    "optionB": "Present tense",
+    "optionC": "Future tense",
+    "optionD": "Past participle",
+    "correct": "C"
+  },
+  {
+    "question": "What is the opposite of 'benevolent'?",
+    "optionA": "Kind",
+    "optionB": "Generous",
+    "optionC": "Malevolent",
+    "optionD": "Charitable",
+    "correct": "C"
+  },
+  {
+    "question": "Which of the following sentences is a question?",
+    "optionA": "The sun is shining.",
+    "optionB": "She won the race.",
+    "optionC": "Have you finished your homework?",
+    "optionD": "He is reading a book.",
+    "correct": "C"
+  }
+]

@@ -1,0 +1,83 @@
+[
+  {
+    "question": "What is an algorithm?",
+    "optionA": "A type of computer virus",
+    "optionB": "A step-by-step procedure for solving a problem",
+    "optionC": "A hardware component of a computer",
+    "optionD": "A type of computer programming language",
+    "correct": "B"
+  },
+  {
+    "question": "Which of the following is NOT a common sorting algorithm?",
+    "optionA": "Bubble Sort",
+    "optionB": "Merge Sort",
+    "optionC": "Quick Sort",
+    "optionD": "Loop Sort",
+    "correct": "D"
+  },
+  {
+    "question": "What is the time complexity of the Bubble Sort algorithm in the worst case?",
+    "optionA": "O(1)",
+    "optionB": "O(n)",
+    "optionC": "O(n^2)",
+    "optionD": "O(log n)",
+    "correct": "C"
+  },
+  {
+    "question": "In computer science, what is 'Big O notation' used for?",
+    "optionA": "To denote the biggest number in an array",
+    "optionB": "To indicate the most common data structure",
+    "optionC": "To analyze the performance of algorithms",
+    "optionD": "To represent a computer's main memory",
+    "correct": "C"
+  },
+  {
+    "question": "Which algorithm is commonly used for searching in a sorted array?",
+    "optionA": "Bubble Sort",
+    "optionB": "Merge Sort",
+    "optionC": "Binary Search",
+    "optionD": "Quick Sort",
+    "correct": "C"
+  },
+  {
+    "question": "What is the primary goal of dynamic programming?",
+    "optionA": "To minimize the use of memory in algorithms",
+    "optionB": "To break down a complex problem into simpler subproblems",
+    "optionC": "To optimize code for execution speed",
+    "optionD": "To create algorithms that work with dynamic data structures",
+    "correct": "B"
+  },
+  {
+    "question": "Which data structure follows the Last-In-First-Out (LIFO) principle?",
+    "optionA": "Queue",
+    "optionB": "Stack",
+    "optionC": "Linked List",
+    "optionD": "Heap",
+    "correct": "B"
+  },
+  {
+    "question": "What is the primary purpose of hash tables in algorithms?",
+    "optionA": "To store data in a sorted order",
+    "optionB": "To perform encryption and decryption",
+    "optionC": "To provide efficient data retrieval and storage",
+    "optionD": "To generate random numbers",
+    "correct": "C"
+  },
+  {
+    "question": "Which algorithmic paradigm involves dividing a problem into smaller subproblems, solving them independently, and combining their solutions?",
+    "optionA": "Brute Force",
+    "optionB": "Greedy Algorithms",
+    "optionC": "Divide and Conquer",
+    "optionD": "Dynamic Programming",
+    "correct": "C"
+  },
+  {
+    "question": "What is the time complexity of an algorithm with a runtime of O(n log n)?",
+    "optionA": "Linear (O(n))",
+    "optionB": "Logarithmic (O(log n))",
+    "optionC": "Quadratic (O(n^2))",
+    "optionD": "Linearithmic (O(n log n))",
+    "correct": "D"
+  }
+]
+
