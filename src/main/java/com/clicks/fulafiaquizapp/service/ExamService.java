@@ -11,6 +11,7 @@ import com.clicks.fulafiaquizapp.repository.*;
 import com.clicks.fulafiaquizapp.utils.DtoMapper;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -20,6 +21,7 @@ import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Random;
 
+@Slf4j
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -82,7 +84,7 @@ public class ExamService {
      * Retrieves exam information for a student using a passcode.
      *
      * @param passcode The passcode associated with the exam.
-     * @param matric
+     * @param matric The matriculation number of the student
      * @return An ExamDto containing exam details if the passcode is valid and unused.
      * @throws ResourceNotFoundException if the passcode is invalid.
      * @throws InvalidParamsException    if the passcode has already been used.
@@ -222,9 +224,10 @@ public class ExamService {
             LocalDate examDate = exam.getDate();
             LocalTime examStopTime = exam.getStopTime();
 
+            String code = courseCode + new Random().nextInt(10000, 999999);
             passcodeRepository.save(
                     ExamPassCode.builder()
-                            .code(courseCode + new Random().nextInt(10000, 999999))
+                            .code(code)
                             .exam(exam)
                             .expiresAt(LocalDateTime.of(
                                     examDate.getYear(),
