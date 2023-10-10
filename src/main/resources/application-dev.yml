@@ -1,6 +1,6 @@
 spring:
   config:
-    import: optional:secured/config.properties
+    import: optional:certs/config.properties
   datasource:
     username: ${DB_USERNAME}
     url: ${DB_URL}
