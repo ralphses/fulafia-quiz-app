@@ -215,9 +215,9 @@ public class ExamService {
         Exam exam = examRepository.findByCourseCode(courseCode)
                 .orElseThrow(() -> new ResourceNotFoundException("Exam for course with course code " + courseCode + " NOT FOUND"));
 
-        if(!exam.getStatus().equals(ExamStatus.CREATED)) {
-            throw new InvalidParamsException("Exam for course with course code " + courseCode + " already started or completed");
-        }
+//        if(!exam.getStatus().equals(ExamStatus.CREATED)) {
+//            throw new InvalidParamsException("Exam for course with course code " + courseCode + " already started or completed");
+//        }
 
         // Step 3: Generate and save passcodes for each student in the course.
         course.getStudents().forEach(student -> {
