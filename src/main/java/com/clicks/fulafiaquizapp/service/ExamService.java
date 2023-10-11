@@ -3,7 +3,6 @@ package com.clicks.fulafiaquizapp.service;
 import com.clicks.fulafiaquizapp.dto.ExamDto;
 import com.clicks.fulafiaquizapp.dto.ExamSubmitRequest;
 import com.clicks.fulafiaquizapp.dto.QuestionDto;
-import com.clicks.fulafiaquizapp.enums.ExamStatus;
 import com.clicks.fulafiaquizapp.exceptions.InvalidParamsException;
 import com.clicks.fulafiaquizapp.exceptions.ResourceNotFoundException;
 import com.clicks.fulafiaquizapp.model.*;
@@ -21,6 +20,9 @@ import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import static com.clicks.fulafiaquizapp.enums.ExamStatus.CREATED;
+import static com.clicks.fulafiaquizapp.enums.ExamStatus.ONGOING;
 
 @Slf4j
 @Service
@@ -99,6 +101,10 @@ public class ExamService {
 
         Student student = studentService.getStudent(matric);
         Exam exam = passCode.getExam();
+
+        if(!student.getCourses().contains(exam.getCourse())) {
+            throw new InvalidParamsException(matric + " did not register for " + exam.getCourse().getCode());
+        }
 
         if(student.getAnsweredExams()
                 .stream()
@@ -202,7 +208,7 @@ public class ExamService {
                 })
                 .toList();
 
-        //Update questions for unaswered questions
+        //Update questions for unanswered questions
         exam.getQuestions().forEach(e -> {
             if(!userAnsweredQuestions.contains(e.getId())) {
                 answeredQuestionRepository.save(
@@ -242,9 +248,9 @@ public class ExamService {
         Exam exam = examRepository.findByCourseCode(courseCode)
                 .orElseThrow(() -> new ResourceNotFoundException("Exam for course with course code " + courseCode + " NOT FOUND"));
 
-//        if(!exam.getStatus().equals(ExamStatus.CREATED)) {
-//            throw new InvalidParamsException("Exam for course with course code " + courseCode + " already started or completed");
-//        }
+        if(!exam.getStatus().equals(CREATED)) {
+            throw new InvalidParamsException("Exam for course with course code " + courseCode + " already started or completed");
+        }
 
         // Step 3: Generate and save passcodes for each student in the course.
         course.getStudents().forEach(student -> {
@@ -268,7 +274,7 @@ public class ExamService {
 
         });
 
-        exam.setStatus(ExamStatus.ONGOING);
+        exam.setStatus(ONGOING);
 
         // Step 4: Return true to indicate a successful start.
         return true;
