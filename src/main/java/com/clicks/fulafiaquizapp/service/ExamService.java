@@ -54,7 +54,7 @@ public class ExamService {
             LocalTime startTime = LocalTime.parse(examDto.startTime());
             LocalTime stopTime = LocalTime.parse(examDto.stopTime());
 
-            // Step 3: Map the question DTOs to actual Question entities and collect them in a list.
+            // Step 3: Map the questionId DTOs to actual Question entities and collect them in a list.
             List<Question> questions = examDto.questions()
                     .stream()
                     .map(this::addQuestion)
@@ -115,13 +115,13 @@ public class ExamService {
 
 
     /**
-     * Adds a new question to the system.
+     * Adds a new questionId to the system.
      *
-     * @param questionDto The DTO containing the question details.
-     * @return The newly added question.
+     * @param questionDto The DTO containing the questionId details.
+     * @return The newly added questionId.
      */
     public Question addQuestion(QuestionDto questionDto) {
-        // Step 1: Create a QuestionOption object to represent the answer options.
+        // Step 1: Create a QuestionOption object to represent the selectedOption options.
         QuestionOption options = questionOptionRepository.save(QuestionOption.builder()
                 .optionD(questionDto.D())
                 .optionA(questionDto.A())
@@ -129,13 +129,13 @@ public class ExamService {
                 .optionC(questionDto.C())
                 .build());
 
-        // Step 2: Create a new Question object with the provided question text and the options.
+        // Step 2: Create a new Question object with the provided questionId text and the options.
         Question newQuestion = Question.builder()
                 .question(questionDto.question())
                 .options(options)
                 .build();
 
-        // Step 3: Save the new question to the repository and return it.
+        // Step 3: Save the new questionId to the repository and return it.
         return questionRepository.save(newQuestion);
     }
 
@@ -148,7 +148,7 @@ public class ExamService {
      * @return True if the exam submission is successful, false otherwise.
      * @throws InvalidParamsException if the student or exam is not found.
      */
-    public boolean submit(String matric, ExamSubmitRequest examSubmitRequest) throws InvalidParamsException {
+    public boolean submit(String matric, ExamSubmitRequest examSubmitRequest) {
         // Step 1: Retrieve the student by matriculation number.
         Student student = studentService.getStudent(matric);
 
@@ -157,7 +157,7 @@ public class ExamService {
                 .findById(examSubmitRequest.examId())
                 .orElseThrow(() -> new InvalidParamsException("Exam with ID " + examSubmitRequest.examId() + " NOT FOUND"));
 
-        // Calculate the score per question in the exam.
+        // Calculate the score per questionId in the exam.
         double scorePerExam = exam.getCapScore() / exam.getNoOfAnswerableQuestion();
 
         // Create an AnsweredExam object to store the submission information.
@@ -167,22 +167,22 @@ public class ExamService {
                 .exam(exam)
                 .build();
 
-        // Step 3: Process and record the student's answers to each question in the exam.
+        // Step 3: Process and record the student's answers to each questionId in the exam.
         List<AnsweredQuestion> answeredQuestions = examSubmitRequest.questions()
                 .stream()
                 .map(questionSubmission -> {
-                    // Retrieve the question by ID or throw an exception if it's not found.
-                    Question question = questionRepository.findById(questionSubmission.question())
-                            .orElseThrow(() -> new InvalidParamsException("Question with ID " + questionSubmission.question() + " NOT FOUND"));
+                    // Retrieve the questionId by ID or throw an exception if it's not found.
+                    Question question = questionRepository.findById(questionSubmission.questionId())
+                            .orElseThrow(() -> new InvalidParamsException("Question with ID " + questionSubmission.questionId() + " NOT FOUND"));
 
-                    // Check if the submitted answer is correct and update the total score.
-                    if (question.getOptions().getCorrectOption().equalsIgnoreCase(questionSubmission.answer())) {
+                    // Check if the submitted selectedOption is correct and update the total score.
+                    if (question.getOptions().getCorrectOption().equalsIgnoreCase(questionSubmission.selectedOption())) {
                         answeredExam.setTotalScore(answeredExam.getTotalScore() + scorePerExam);
                     }
 
-                    // Create an AnsweredQuestion object to record the student's answer to this question.
+                    // Create an AnsweredQuestion object to record the student's selectedOption to this questionId.
                     return AnsweredQuestion.builder()
-                            .answer(questionSubmission.answer())
+                            .answer(questionSubmission.selectedOption())
                             .question(question)
                             .build();
                 })
