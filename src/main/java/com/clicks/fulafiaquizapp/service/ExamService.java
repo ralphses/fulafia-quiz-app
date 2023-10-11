@@ -35,6 +35,7 @@ public class ExamService {
     private final ExamPasscodeRepository passcodeRepository;
     private final AnsweredExamRepository answeredExamRepository;
     private final QuestionOptionRepository questionOptionRepository;
+    private final AnsweredQuestionRepository answeredQuestionRepository;
 
     /**
      * Adds a new exam based on the provided ExamDto.
@@ -181,10 +182,10 @@ public class ExamService {
                     }
 
                     // Create an AnsweredQuestion object to record the student's selectedOption to this questionId.
-                    return AnsweredQuestion.builder()
+                    return answeredQuestionRepository.save(AnsweredQuestion.builder()
                             .answer(questionSubmission.selectedOption())
                             .question(question)
-                            .build();
+                            .build());
                 })
                 .toList();
 
