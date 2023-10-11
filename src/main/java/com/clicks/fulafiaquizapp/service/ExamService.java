@@ -18,6 +18,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -168,6 +169,8 @@ public class ExamService {
                 .exam(exam)
                 .build();
 
+        List<Long> userAnsweredQuestions = new ArrayList<>();
+
         // Step 3: Process and record the student's answers to each questionId in the exam.
         List<AnsweredQuestion> answeredQuestions = examSubmitRequest.questions()
                 .stream()
@@ -181,6 +184,8 @@ public class ExamService {
                         answeredExam.setTotalScore(answeredExam.getTotalScore() + scorePerExam);
                     }
 
+                    userAnsweredQuestions.add(question.getId());
+
                     // Create an AnsweredQuestion object to record the student's selectedOption to this questionId.
                     return answeredQuestionRepository.save(AnsweredQuestion.builder()
                             .answer(questionSubmission.selectedOption())
@@ -188,6 +193,18 @@ public class ExamService {
                             .build());
                 })
                 .toList();
+
+        //Update questions for unaswered questions
+        exam.getQuestions().forEach(e -> {
+            if(!userAnsweredQuestions.contains(e.getId())) {
+                answeredQuestionRepository.save(
+                        AnsweredQuestion.builder()
+                                .question(e)
+                                .answer("F")
+                                .build()
+                );
+            }
+        });
 
         // Set the answered questions in the AnsweredExam.
         answeredExam.setAnsweredQuestions(answeredQuestions);
@@ -198,6 +215,7 @@ public class ExamService {
         // Return true to indicate a successful submission.
         return true;
     }
+
 
     /**
      * Generates and starts an exam for a given course.
