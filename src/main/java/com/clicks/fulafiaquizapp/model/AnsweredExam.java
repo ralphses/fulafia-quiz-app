@@ -19,7 +19,7 @@ public class AnsweredExam {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     private Exam exam;
 
     private Double totalScore;
