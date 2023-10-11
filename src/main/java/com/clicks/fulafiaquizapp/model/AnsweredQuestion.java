@@ -19,7 +19,7 @@ public class AnsweredQuestion {
     @GeneratedValue(strategy = AUTO)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     private Question question;
     private String answer;
 
