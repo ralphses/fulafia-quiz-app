@@ -97,10 +97,18 @@ public class ExamService {
         ExamPassCode passCode = passcodeRepository.findByCode(passcode)
                 .orElseThrow(() -> new ResourceNotFoundException("Invalid passcode " + passcode + " supplied"));
 
+        Student student = studentService.getStudent(matric);
+        Exam exam = passCode.getExam();
+
+        if(student.getAnsweredExams()
+                .stream()
+                .anyMatch(answeredExam -> answeredExam.getExam().getId().equals(exam.getId()))){
+            throw new InvalidParamsException(matric + " already sat for " + exam.getCourse().getCode());
+        }
+
         // Step 2: Check if the passcode has already been used.
         if (!passCode.isUsed()) {
 
-            Student student = studentService.getStudent(matric);
             passCode.setStudent(student);
             student.getPassCode().add(passCode);
 
@@ -108,7 +116,7 @@ public class ExamService {
             passCode.setUsed(true);
 
             // Step 3: Map the exam associated with the passcode to an ExamDto and return it.
-            return mapper.examDto(passCode.getExam(), student);
+            return mapper.examDto(exam, student);
         } else {
             // Step 4: If the passcode has already been used, throw an exception.
             throw new InvalidParamsException("Passcode " + passcode + " has already been used");
