@@ -7,6 +7,7 @@ public record StudentDto(
         String matric,
         String name,
         String image,
+        //comment
         List<CourseDto> courses
 ) {
 }
