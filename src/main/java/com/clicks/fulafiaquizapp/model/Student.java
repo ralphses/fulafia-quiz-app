@@ -38,5 +38,4 @@ public class Student {
     @OneToMany
     private List<ExamPassCode> passCode;
 
-
 }
