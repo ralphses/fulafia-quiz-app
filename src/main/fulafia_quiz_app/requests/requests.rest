@@ -1,0 +1,5 @@
+https://fulafia-quiz-app-production.up.railway.app/api/v1/exam/get?passcode=CSC111312755&matric=2031800111
+
+###
+
+POST https://fulafia-quiz-app-production.up.railway.app/api/v1/exam/start/CSC121
