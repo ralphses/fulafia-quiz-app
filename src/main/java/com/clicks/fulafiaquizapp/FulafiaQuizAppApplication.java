@@ -98,6 +98,7 @@ public class FulafiaQuizAppApplication {
 
                 Exam exam = examRepository.save(Exam.builder()
                         .noOfQuestions((byte) 10)
+                        //hh
                         .noOfAnswerableQuestion(8)
                         .capScore(40.0)
                         .status(ExamStatus.CREATED)
